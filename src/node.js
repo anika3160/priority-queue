@@ -14,8 +14,8 @@ class Node {
 			this.left.parent.left = this.left;
 		} else if (this.right===null){
 			this.right=node;
-			this.left.parent = this;
-			this.left.parent.left = this.left;
+			this.right.parent = this;
+			this.right.parent.right = this.right;
 		}
 	}
 
@@ -39,7 +39,21 @@ class Node {
 	}
 
 	swapWithParent() {
-		
+		if (!this.parent) {
+		}
+		else {
+				let PWithNewDP = {};
+				PWithNewDP.left=this.left;
+				PWithNewDP.right=this.right;
+				let granDad=this.parent.parent;
+
+				this.left=this.parent.left;
+				this.right=this.parent.right;
+				this.parent.left=PWithNewDP.left;
+				this.parent.right=PWithNewDP.right;
+				this.parent.parent=this;
+				this.parent=granDad;
+		}
 	}
 }
 
