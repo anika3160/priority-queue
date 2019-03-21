@@ -6,12 +6,11 @@ class PriorityQueue {
     }
 
 	push(data, priority) {
-
-
+		this.heap.push(data, priority);
 	}
 
 	shift() {
-
+		this.heap.pop();
 	}
 
 	size() {
@@ -19,7 +18,7 @@ class PriorityQueue {
 	}
 
 	isEmpty() {
-		
+
 	}
 }
 
